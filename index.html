@@ -4,7 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Harikrushna Restaurant & Banquet - Premium Gujarati & North Indian Cuisine in Surat | 4.5⭐</title>
-    <meta name="description" content="Harikrushna Restaurant & Banquet - Premium Gujarati & North Indian cuisine in Surat. 4.5⭐ rated, Family-friendly, LGBTQ+ friendly. Dine-in, Delivery, Banquet Services. Reserve your table now!">
+    <meta name="description" content="Harikrushna Restaurant & Banquet - Premium Gujarati & North Indian cuisine in Surat. 4.5⭐ rated, Family-friendly, LGBTQ+ friendly.
+        }
+
+        .menu-item {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid var(--primary);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            animation: slideInUp 0.6s ease-out;
+            position: relative;
+            overflow: hidden;
+        }
+
+        body.dark-mode .menu-item {
+            background: #2a2a2a;
+        }
+
+        .menu-item:hover {
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            transform: translateY(-5px);
+        }
+
+        /* Loading state */
+        .menu-item.loading {
+            opacity: 0.7;
+            pointer-events: none;
+        }
+
+        .menu-item-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+        }
+
+        @keyframes loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+
+        .menu-item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+            flex Dine-in, Delivery, Banquet Services. Reserve your table now!">
     <meta name="keywords" content="restaurant, gujarati food, north indian, surat, banquet, catering, paneer tikka, swami roti, fine dining">
     <meta property="og:title" content="Harikrushna Restaurant & Banquet - Surat">
     <meta property="og:description" content="Premium Gujarati & North Indian restaurant with authentic flavors and warm hospitality.">
@@ -24,6 +75,8 @@
             --light: #f5f5f5;
             --dark: #1a1a1a;
             --white: #ffffff;
+            --success: #27ae60;
+            --error: #e74c3c;
         }
 
         html {
@@ -34,13 +87,104 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: #333;
-            background-color: var(--light);
+            background-color:-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .menu-item h3 {
+            color: var(--secondary);
+            margin: 0;
+            flex: 1;
+        }
+
+        body.dark-mode .menu-item h3 {
+            color: var(--primary);
+        }
+
+        .menu-item-price {
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 1.3rem;
+            white-space: nowrap;
+        }
+
+        .menu-item p {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        body.dark-mode .menu-item p {
+            color: #aaa;
+        }
+
+        /* Reviews */
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .review-card {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            animation: slideInUp 0.6s ease-out;
+        }
+
+        body.dark-mode .review-card {
+            background: #2a2a2a;
+        }
+
+        .review-image {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+            object-fit: cover;
+            background: #f0f0f0;
+        }
+
+        .review-stars {
+            color: #FF var(--light);
             transition: background-color 0.3s, color 0.3s;
         }
 
         body.dark-mode {
             background-color: var(--dark);
             color: #f0f0f0;
+        }
+
+        /* Sticky Mobile Call Button */
+        .mobile-call-button {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 999;
+            background: var(--accent);
+            color: var(--white);
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            font-size: 1.8rem;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 4px 12px rgba(230, 126, 34, 0.4); }
+            50% { box-shadow: 0 4px 20px rgba(230, 126, 34, 0.8); }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-call-button {
+                display: block;
+            }
         }
 
         /* Header */
@@ -50,7 +194,69 @@
             padding: 20px 0;
             position: fixed;
             width: 100%;
-            top: 0;
+            top: 0;D700;
+            margin-bottom: 1rem;
+            font-weight: bold;
+        }
+
+        .review-text {
+            font-style: italic;
+            margin-bottom: 1rem;
+            color: #555;
+        }
+
+        body.dark-mode .review-text {
+            color: #aaa;
+        }
+
+        .review-author {
+            font-weight: bold;
+            color: var(--secondary);
+        }
+
+        body.dark-mode .review-author {
+            color: var(--primary);
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--white);
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            animation: slideInUp 0.6s ease-out;
+        }
+
+        body.dark-mode .faq-item {
+            background: #2a2a2a;
+        }
+
+        .faq-question {
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+            font-weight: bold;
+            color: var(--secondary);
+        }
+
+        body.dark-mode .faq-question {
+            color: var(--primary);
+        }
+
+        .faq-toggle {
+            transition: transform 0.3s;
+            font-size: 1.5rem;
+        }
+
+        .faq-toggle.
             z-index: 1000;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
@@ -83,8 +289,9 @@
             font-weight: 500;
         }
 
-        nav a:hover {
+        nav a:hover, nav a:focus {
             color: var(--primary);
+            outline: none;
         }
 
         .theme-toggle {
@@ -113,9 +320,82 @@
         .hero {
             background: linear-gradient(135deg, var(--secondary) 0%, var(--accent) 100%);
             color: var(--white);
+            active {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            display: none;
+            margin-top: 1rem;
+            color: #555;
+            padding-top: 1rem;
+            border-top: 1px solid #eee;
+        }
+
+        body.dark-mode .faq-answer {
+            color: #aaa;
+            border-top-color: #444;
+        }
+
+        .faq-answer.active {
+            display: block;
+            animation: slideInUp 0.3s ease-out;
+        }
+
+        /* Contact & Map */
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .contact-item {
+            text-align: center;
+            animation: slideInUp 0.6s ease-out;
+        }
+
+        .contact-item .icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-item h3 {
+            color: var(--secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        body.dark-mode .contact-item h3 {
+            color: var(--primary);
+        }
+
+        .contact-item a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        .map-container {
+            margin: 2rem 0;
+            text-align: center;
             padding: 150px 20px 100px;
             text-align: center;
             margin-top: 60px;
+            animation: slideInDown 0.8s ease-out;
+        }
+
+        @keyframes slideInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .hero h1 {
@@ -156,7 +436,65 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            font-sizeanimation: slideInUp 0.6s ease-out;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            max-width: 100%;
+            height: 400px;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .map-error {
+            background: #f8d7da;
+            color: #721c24;
+            padding: 1rem;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        /* Booking Form */
+        .booking-form {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            max-width: 600px;
+            margin: 0 auto;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            animation: slideInUp 0.6s ease-out;
+        }
+
+        body.dark-mode .booking-form {
+            background: #2a2a2a;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: var(--secondary);
+        }
+
+        body.dark-mode .form-group label {
+            color: var(--primary);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
             font-size: 1rem;
+            font: 1rem;
             font-weight: bold;
             transition: all 0.3s;
             text-decoration: none;
@@ -193,6 +531,18 @@
 
         section {
             margin: 60px 0;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         h2 {
@@ -210,7 +560,60 @@
         .highlights {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
+            -family: inherit;
+            transition: border-color 0.3s;
+        }
+
+        body.dark-mode .form-group input,
+        body.dark-mode .form-group select,
+        body.dark-mode .form-group textarea {
+            background: #1a1a1a;
+            color: #f0f0f0;
+            border-color: #444;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 5px rgba(212, 165, 116, 0.3);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .message {
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: bold;
+            animation: slideInDown 0.5s ease-out;
+        }
+
+        .message.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .message.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        body.dark-mode .message.success {
+            background: #1e4620;
+            color: #90ee90;
+        }
+
+        body.dark-mode .message.error {
+            background: #4gap: 2rem;
             margin: 3rem 0;
         }
 
@@ -235,6 +638,7 @@
         .highlight-card .icon {
             font-size: 3rem;
             margin-bottom: 1rem;
+            aria-hidden: "true";
         }
 
         .highlight-card h3 {
@@ -261,6 +665,66 @@
             border-left: 4px solid var(--primary);
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
             transition: all 0.3s;
+            overflowa1a1a;
+            color: #ff6b6b;
+        }
+
+        /* Form submission spinner */
+        .btn:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+
+        .spinner {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border: 2px solid #f3f3f3;
+            border-top: 2px solid var(--accent);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-right: 8px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Footer */
+        footer {
+            background: var(--secondary);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+        }
+
+        footer a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Banquet Section */
+        .packages {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .package-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px: hidden;
         }
 
         body.dark-mode .menu-item {
@@ -270,6 +734,25 @@
         .menu-item:hover {
             box-shadow: 0 8px 25px rgba(0,0,0,0.15);
             transform: translateY(-5px);
+        }
+
+        .menu-item-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            overflow: hidden;
+        }
+
+        .menu-item-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .menu-item-header {
@@ -303,7 +786,62 @@
             color: #aaa;
         }
 
-        /* Reviews */
+        /* Reviews;
+            text-align: center;
+            border: 2px solid #e0e0e0;
+            transition: all 0.3s;
+            animation: slideInUp 0.6s ease-out;
+        }
+
+        body.dark-mode .package-card {
+            background: #2a2a2a;
+            border-color: #444;
+        }
+
+        .package-card.featured {
+            border-color: var(--primary);
+            transform: scale(1.05);
+            box-shadow: 0 8px 30px rgba(212, 165, 116, 0.3);
+        }
+
+        .package-card h3 {
+            color: var(--secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        body.dark-mode .package-card h3 {
+            color: var(--primary);
+        }
+
+        .package-price {
+            font-size: 1.8rem;
+            color: var(--accent);
+            font-weight: bold;
+            margin: 1rem 0;
+        }
+
+        .package-card ul {
+            list-style: none;
+            text-align: left;
+            margin: 1.5rem 0;
+        }
+
+        .package-card li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #f0f0f0;
+            color: #555;
+        }
+
+        body.dark-mode .package-card li {
+            border-bottom-color: #444;
+            color: #aaa;
+        }
+
+        .package-card li:before {
+            content: "✓ ";
+            color: var(--accent);
+            font-weight: bold;
+            margin-right: */
         .reviews-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -320,6 +858,25 @@
 
         body.dark-mode .review-card {
             background: #2a2a2a;
+        }
+
+        .review-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .review-avatar img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
         }
 
         .review-stars {
@@ -344,6 +901,181 @@
 
         body.dark-mode .review-author {
             color: var(--primary);
+        }
+
+        /* FAQ Section */
+        .faq-container {
+            max 0.5rem;
+        }
+
+        /* Social Links */
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin: 2rem 0;
+        }
+
+        .social-links a {
+            display: inline-block;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .call-btn-mobile {
+                display: block;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .package-card.featured {
+                transform: scale(1);
+            }
+
+            nav.active {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                right: 0;
+                background:-width: 800px;
+            margin: 2rem auto;
+        }
+
+        .faq-item {
+            background: var(--white);
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        body.dark-mode .faq-item {
+            background: #2a2a2a;
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+            background: var(--light);
+            border-radius: 8px;
+            border: none;
+            width: 100%;
+            transition: background 0.3s;
+        }
+
+        body.dark-mode .faq-question {
+            background: #333;
+        }
+
+        .faq-question:hover {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .faq-toggle {
+            font-size: 1.5rem;
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            padding: 0 1.5rem;
+        }
+
+        .faq-item var(--secondary);
+                padding: 1rem;
+                gap: 1rem;
+            }
+
+            .container {
+                padding: 40px 20px;
+            }
+
+            section {
+                margin: 40px 0;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+        }
+
+        /* Accessibility */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0,0,0,0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header role="banner">
+        <div class="header-container">
+            <div class="logo" role="img" aria-label="Harikrushna Restaurant logo">🍽️ Harikrushna</div>
+            <nav id="nav" role="navigation" aria-label="Main navigation">
+                <a href="#home" aria-label="Go to home">Home</a>
+                <a href="#menu" aria-label="Go to menu">Menu</a>
+                <a href="#banquet" aria-label="Go to banquet services">Banquet</a>
+                <a href="#contact" aria-label="Go to contact">Contact</a>
+                <a href="#booking" aria-label="Go to booking">Book.active .faq-answer {
+            max-height: 500px;
+            padding: 1.5rem;
+        }
+
+        .faq-answer p {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        body.dark-mode .faq-answer p {
+            color: #aaa;
         }
 
         /* Contact & Map */
@@ -375,6 +1107,7 @@
         .map-container {
             margin: 2rem 0;
             text-align: center;
+            position: relative;
         }
 
         .map-container iframe {
@@ -384,6 +1117,34 @@
             border: none;
             border-radius: 10px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .map-error {
+            display: none;
+            background: #f8d7da;
+            color: #721c24;
+            padding: 1rem;
+            border-radius: 5px;
+            margin</a>
+            </nav>
+            <div class="header-right">
+                <a href="tel:+919925899995" class="call-btn-mobile" aria-label="Call restaurant">📞 Call</a>
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">🌙</button>
+                <button class="mobile-menu" id="mobileMenuBtn" aria-label="Toggle mobile menu">☰</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home" aria-labelledby="hero-title">
+        <h1 id="hero-title">Welcome to Harikrushna</h1>
+        <p>Experience Authentic Gujarati & North Indian Cuisine</p>
+        <div class="rating-badge" aria-label="Rating: 4.5 stars out of 5, based on 4084 reviews">
+            <span class="stars">★★★★★</span><br>
+            <span>4.5/5 (4,084 Reviews)</span>
+        </div>
+        <div class="cta-buttons">
+            <a href="#menu" class="btn btn-primary" aria-label="Go to menu">: 1rem 0;
         }
 
         /* Booking Form */
@@ -440,7 +1201,34 @@
         .form-group textarea:focus {
             outline: none;
             border-color: var(--primary);
-            box-shadow: 0 0 5px rgba(212, 165, 116, 0.3);
+            box-shadow: 0 0 5px rgba(212Explore Menu</a>
+            <a href="#booking" class="btn btn-secondary" aria-label="Reserve a table">Reserve Table</a>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="container" aria-labelledby="why-choose-us">
+        <h2 id="why-choose-us">Why Choose Us</h2>
+        <div class="highlights">
+            <div class="highlight-card">
+                <div class="icon" aria-hidden="true">⭐</div>
+                <h3>Premium Quality</h3>
+                <p>Fresh ingredients & authentic recipes prepared with care</p>
+            </div>
+            <div class="highlight-card">
+                <div class="icon" aria-hidden="true">👨‍👩‍👧‍👦</div>
+                <h3>Family Friendly</h3>
+                <p>Perfect for all occasions and celebrations</p>
+            </div>
+            <div class="highlight-card">
+                <div class="icon" aria-hidden="true">🎉</div>
+                <h3>Banquet Services</h3>
+                <p>Host events with up to 500+ guests</p>
+            </div>
+            <div class="highlight-card">
+                <div class="icon" aria-hidden="true">🚚</div>
+                <h3>Quick Delivery</h3>
+                , 165, 116, 0.3);
         }
 
         .form-row {
@@ -455,6 +1243,11 @@
             border-radius: 5px;
             text-align: center;
             font-weight: bold;
+            display: none;
+        }
+
+        .message.show {
+            display: block;
         }
 
         .message.success {
@@ -479,6 +1272,42 @@
             color: #ff6b6b;
         }
 
+        /* Loading Spinner */
+        .spinner {
+            display: none;
+            border: 3px solid rgba(0,0,0,0.1);
+            border-top-color: var(--primary);
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 0.8s linear infinite;
+            margin: 0 auto 1rem;
+        }
+
+        .spinner.show {
+            display: block;<p>No-contact home delivery available</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu -->
+    <section class="container" id="menu" aria-labelledby="menu-title">
+        <h2 id="menu-title">Our Menu</h2>
+        <div class="menu-grid">
+            <div class="menu-item">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%23f0f0f0' width='400' height='300'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='%23999' font-family='Arial' font-size='24'%3EPaneer Tikka%3C/text%3E%3C/svg%3E" alt="Paneer Tikka" class="menu-item-image" loading="lazy">
+                <div class="menu-item-header">
+                    <h3>Paneer Tikka</h3>
+                    <span class="menu-item-price">₹250</span>
+                </div>
+                <p>Marinated paneer cubes grilled to perfection with Indian spices</p>
+                <button class="btn btn-primary" onclick="orderOnWhatsApp('
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
         /* Footer */
         footer {
             background: var(--secondary);
@@ -490,6 +1319,30 @@
 
         footer p {
             margin: 0.5rem 0;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            color: var(--white);
+            border-radius: 50%;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        .social-links a:hover {
+            background: var(--accent);
         }
 
         /* Banquet Section */
@@ -514,7 +1367,19 @@
             border-color: #444;
         }
 
-        .package-card.featured {
+        .package-card.Paneer Tikka - ₹250')">Add to Order</button>
+            </div>
+            <div class="menu-item">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%23f0f0f0' width='400' height='300'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='%23999' font-family='Arial' font-size='24'%3ESwami Roti%3C/text%3E%3C/svg%3E" alt="Swami Roti" class="menu-item-image" loading="lazy">
+                <div class="menu-item-header">
+                    <h3>Swami Roti</h3>
+                    <span class="menu-item-price">₹30</span>
+                </div>
+                <p>Traditional Indian flatbread, soft and freshly made</p>
+                <button class="btn btn-primary" onclick="orderOnWhatsApp('Swami Roti - ₹30')">Add to Order</button>
+            </div>
+            <div class="menu-item">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%23f0f0f0' width='400' height='300'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='%23999' font-family='Arial' font-size='24'%3ETawa Paratha%3C/text%3E%3C/svg%3E" alt="Tawa Paratha" class="menu-item-featured {
             border-color: var(--primary);
             transform: scale(1.05);
             box-shadow: 0 8px 30px rgba(212, 165, 116, 0.3);
@@ -573,7 +1438,25 @@
             }
 
             .form-row {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1frimage" loading="lazy">
+                <div class="menu-item-header">
+                    <h3>Tawa Paratha</h3>
+                    <span class="menu-item-price">₹60</span>
+                </div>
+                <p>Stuffed Indian bread with various fillings</p>
+                <button class="btn btn-primary" onclick="orderOnWhatsApp('Tawa Paratha - ₹60')">Add to Order</button>
+            </div>
+            <div class="menu-item">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%23f0f0f0' width='400' height='300'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='%23999' font-family='Arial' font-size='24'%3EDaal Fry%3C/text%3E%3C/svg%3E" alt="Daal Fry" class="menu-item-image" loading="lazy">
+                <div class="menu-item-header">
+                    <h3>Daal Fry</h3>
+                    <span class="menu-item-price">₹120</span>
+                </div>
+                <p>Lentils cooked with aromatic Indian spices</p>
+                <button class="btn btn-primary" onclick="orderOnWhatsApp('Daal Fry - ₹120')">Add to Order</button>
+            </div>
+            <div class="menu-item">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%;
             }
 
             .package-card.featured {
@@ -592,25 +1475,12 @@
                 gap: 1rem;
             }
         }
-
-        /* Smooth animations */
-        @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        section {
-            animation: slideIn 0.6s ease-out;
-        }
     </style>
 </head>
 <body>
+    <!-- Mobile Call Button -->
+    <button class="mobile-call-button" id="mobileCallBtn" aria-label="Call restaurant" title="Call Harikrushna">📞</button>
+
     <!-- Header -->
     <header>
         <div class="header-container">
@@ -619,11 +1489,26 @@
                 <a href="#home">Home</a>
                 <a href="#menu">Menu</a>
                 <a href="#banquet">Banquet</a>
+                <a href="#faq">FAQ</a>
                 <a href="#contact">Contact</a>
                 <a href="#booking">Book</a>
             </nav>
-            <button class="theme-toggle" id="themeToggle">🌙</button>
-            <button class="mobile-menu" id="mobileMenuBtn">☰</button>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark3E%3Crect fill='%23f0f0f0' width='400' height='300'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='%23999' font-family='Arial' font-size='24'%3EManchurian Dry%3C/text%3E%3C/svg%3E" alt="Manchurian Dry" class="menu-item-image" loading="lazy">
+                <div class="menu-item-header">
+                    <h3>Manchurian Dry</h3>
+                    <span class="menu-item-price">₹200</span>
+                </div>
+                <p>Crispy vegetable balls in tangy sauce</p>
+                <button class="btn btn-primary" onclick="orderOnWhatsApp('Manchurian Dry - ₹200')">Add to Order</button>
+            </div>
+            <div class="menu-item">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%23f0f0f0' width='400' height='300'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='%23999' font-family='Arial' font-size='24'%3EBesan Laddu%3C/text%3E%3C/svg%3E" alt="Besan Laddu" class="menu-item-image" loading="lazy">
+                <div class="menu-item-header">
+                    <h3>Besan Laddu</h3>
+                    <span class="menu-item-price">₹100</span>
+                </div>
+                <p>Traditional chickpea flour sw mode">🌙</button>
+            <button class="mobile-menu" id="mobileMenuBtn" aria-label="Toggle mobile menu">☰</button>
         </div>
     </header>
 
@@ -631,9 +1516,9 @@
     <section class="hero" id="home">
         <h1>Welcome to Harikrushna</h1>
         <p>Experience Authentic Gujarati & North Indian Cuisine</p>
-        <div class="rating-badge">
-            <span class="stars">★★★★★ 4.5/5</span><br>
-            <span>(4,084 Reviews)</span>
+        <div class="rating-badge" role="img" aria-label="Rating 4.5 out of 5 stars with 4084 reviews">
+            <span class="stars">★★★★★</span><br>
+            <span>4.5/5 (4,084 Reviews)</span>
         </div>
         <div class="cta-buttons">
             <a href="#menu" class="btn btn-primary">Explore Menu</a>
@@ -646,22 +1531,35 @@
         <h2>Why Choose Us</h2>
         <div class="highlights">
             <div class="highlight-card">
-                <div class="icon">⭐</div>
+                <div class="icon" ariaeets</p>
+                <button class="btn btn-primary" onclick="orderOnWhatsApp('Besan Laddu - ₹100')">Add to Order</button>
+            </div>
+            <div class="menu-item">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%23f0f0f0' width='400' height='300'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='%23999' font-family='Arial' font-size='24'%3EMasala Papad%3C/text%3E%3C/svg%3E" alt="Masala Papad" class="menu-item-image" loading="lazy">
+                <div class="menu-item-header">
+                    <h3>Masala Papad</h3>
+                    <span class="menu-item-price">₹80</span>
+                </div>
+                <p>Crispy papad with spiced toppings</p>
+                <button class="btn btn-primary" onclick="orderOnWhatsApp('Masala Papad - ₹80')">Add to Order</button>
+            </div>
+            <div class="menu-item">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%23f0f0f0' width='400' height='300'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='%23999' font-family='Arial' font-size='24'%3EButter Milk%3C/text%3E%3C/svg%3E" alt="Butter Milk" class="menu-item-image"-hidden="true">⭐</div>
                 <h3>Premium Quality</h3>
                 <p>Fresh ingredients & authentic recipes prepared with care</p>
             </div>
             <div class="highlight-card">
-                <div class="icon">👨‍👩‍👧‍👦</div>
+                <div class="icon" aria-hidden="true">👨‍👩‍👧‍👦</div>
                 <h3>Family Friendly</h3>
                 <p>Perfect for all occasions and celebrations</p>
             </div>
             <div class="highlight-card">
-                <div class="icon">🎉</div>
+                <div class="icon" aria-hidden="true">🎉</div>
                 <h3>Banquet Services</h3>
                 <p>Host events with up to 500+ guests</p>
             </div>
             <div class="highlight-card">
-                <div class="icon">🚚</div>
+                <div class="icon" aria-hidden="true">🚚</div>
                 <h3>Quick Delivery</h3>
                 <p>No-contact home delivery available</p>
             </div>
@@ -673,13 +1571,38 @@
         <h2>Our Menu</h2>
         <div class="menu-grid">
             <div class="menu-item">
+                <div class="menu-item-image">🍛</div>
+                <div class="menu-item-header loading="lazy">
                 <div class="menu-item-header">
+                    <h3>Butter Milk</h3>
+                    <span class="menu-item-price">₹40</span>
+                </div>
+                <p>Fresh yogurt drink, perfect with meals</p>
+                <button class="btn btn-primary" onclick="orderOnWhatsApp('Butter Milk - ₹40')">Add to Order</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Banquet Services -->
+    <section class="container" id="banquet" aria-labelledby="banquet-title">
+        <h2 id="banquet-title">Banquet & Events</h2>
+        <p style="text-align: center; margin-bottom: 2rem; font-size: 1.1rem;">
+            Host your special moments at Harikrushna. Perfect for weddings, birthdays, corporate events, and celebrations!
+        </p>
+        <div class="packages">
+            <div class="package-card">
+                <h3>Basic Package</h3>
+                <div class="package-price">₹500/person</div>
+                <ul>
+                    <li>Veg & Non-Veg Menu</li>
+                    <li>Basic Decoration">
                     <h3>Paneer Tikka</h3>
                     <span class="menu-item-price">₹250</span>
                 </div>
                 <p>Marinated paneer cubes grilled to perfection with Indian spices</p>
             </div>
             <div class="menu-item">
+                <div class="menu-item-image">🥖</div>
                 <div class="menu-item-header">
                     <h3>Swami Roti</h3>
                     <span class="menu-item-price">₹30</span>
@@ -687,6 +1610,7 @@
                 <p>Traditional Indian flatbread, soft and freshly made</p>
             </div>
             <div class="menu-item">
+                <div class="menu-item-image">🫓</div>
                 <div class="menu-item-header">
                     <h3>Tawa Paratha</h3>
                     <span class="menu-item-price">₹60</span>
@@ -694,13 +1618,41 @@
                 <p>Stuffed Indian bread with various fillings</p>
             </div>
             <div class="menu-item">
+                <div class="menu-item-image">🍲</div>
                 <div class="menu-item-header">
                     <h3>Daal Fry</h3>
                     <span class="menu-item-price">₹120</span>
-                </div>
+                </div></li>
+                    <li>Table & Chairs</li>
+                    <li>Up to 50 guests</li>
+                </ul>
+                <button class="btn btn-primary" onclick="inquirePackage('Basic')">Choose Plan</button>
+            </div>
+            <div class="package-card featured">
+                <h3>Premium Package</h3>
+                <div class="package-price">₹1000/person</div>
+                <ul>
+                    <li>Exclusive Menu</li>
+                    <li>Professional Decoration</li>
+                    <li>Premium Setup</li>
+                    <li>Sound System</li>
+                    <li>Up to 200 guests</li>
+                </ul>
+                <button class="btn btn-primary" onclick="inquirePackage('Premium')">Choose Plan</button>
+            </div>
+            <div class="package-card">
+                <h3>Luxury Package</h3>
+                <div class="package-price">₹1500/person</div>
+                <ul>
+                    <li>Customized Menu</li>
+                    <li>Full Event Management</li>
+                    <li>Premium Decoration</li>
+                    <li>LED Screen & Photography</li>
+                    <li>500
                 <p>Lentils cooked with aromatic Indian spices</p>
             </div>
             <div class="menu-item">
+                <div class="menu-item-image">🍜</div>
                 <div class="menu-item-header">
                     <h3>Manchurian Dry</h3>
                     <span class="menu-item-price">₹200</span>
@@ -708,6 +1660,7 @@
                 <p>Crispy vegetable balls in tangy sauce</p>
             </div>
             <div class="menu-item">
+                <div class="menu-item-image">🍮</div>
                 <div class="menu-item-header">
                     <h3>Besan Laddu</h3>
                     <span class="menu-item-price">₹100</span>
@@ -715,6 +1668,7 @@
                 <p>Traditional chickpea flour sweets</p>
             </div>
             <div class="menu-item">
+                <div class="menu-item-image">🥒</div>
                 <div class="menu-item-header">
                     <h3>Masala Papad</h3>
                     <span class="menu-item-price">₹80</span>
@@ -722,6 +1676,7 @@
                 <p>Crispy papad with spiced toppings</p>
             </div>
             <div class="menu-item">
+                <div class="menu-item-image">🥛</div>
                 <div class="menu-item-header">
                     <h3>Butter Milk</h3>
                     <span class="menu-item-price">₹40</span>
@@ -747,7 +1702,54 @@
                     <li>Table & Chairs</li>
                     <li>Up to 50 guests</li>
                 </ul>
-                <button class="btn btn-primary">Choose Plan</button>
+                <button class="btn btn-primary" onclick="contactUs('Basic')">Choose Plan+ guests</li>
+                </ul>
+                <button class="btn btn-primary" onclick="inquirePackage('Luxury')">Choose Plan</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="container" aria-labelledby="faq-title">
+        <h2 id="faq-title">Frequently Asked Questions</h2>
+        <div class="faq-section">
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>What are your operating hours?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    We are open Monday to Sunday from 11:00 AM to 10:30 PM. We accept reservations during these hours.
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Do you have vegetarian options?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Yes! We offer a wide variety of vegetarian dishes including paneer tikka, swami roti, daal fry, and more. We can accommodate dietary preferences upon request.
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Can I order online?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Yes, you can order through WhatsApp by clicking "Add to Order" on any menu item, or call us directly at 099258 99995. We offer home delivery in the local area.
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>How far in advance should I book for an event?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    We recommend booking at least 2-3 weeks in advance for events. For large celebrations (200+ guests), we suggest booking a month or more ahead to ensure availability.
+                </div>
+            </div>
+            <div class="faq-item"></button>
             </div>
             <div class="package-card featured">
                 <h3>Premium Package</h3>
@@ -759,7 +1761,7 @@
                     <li>Sound System</li>
                     <li>Up to 200 guests</li>
                 </ul>
-                <button class="btn btn-primary">Choose Plan</button>
+                <button class="btn btn-primary" onclick="contactUs('Premium')">Choose Plan</button>
             </div>
             <div class="package-card">
                 <h3>Luxury Package</h3>
@@ -771,7 +1773,7 @@
                     <li>LED Screen & Photography</li>
                     <li>500+ guests</li>
                 </ul>
-                <button class="btn btn-primary">Choose Plan</button>
+                <button class="btn btn-primary" onclick="contactUs('Luxury')">Choose Plan</button>
             </div>
         </div>
     </section>
@@ -779,21 +1781,141 @@
     <!-- Customer Reviews -->
     <section class="container">
         <h2>What Our Customers Say</h2>
+        <div class="reviews
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Do you provide catering for home events?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Yes! We provide full catering services with customized menus. Please contact us at 099258 99995 or fill the booking form for a personalized quote.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Reviews -->
+    <section class="container" aria-labelledby="reviews-title">
+        <h2 id="reviews-title">What Our Customers Say</h2>
         <div class="reviews-grid">
             <div class="review-card">
-                <div class="review-stars">★★★★★</div>
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%23D4A574'/%3E%3C/svg%3E" alt="Dr. Riya Champaneriya" class="review-image" loading="lazy">
+                <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
+                <p class="review-text">"The ambiance was warm and welcoming,-grid">
+            <div class="review-card">
+                <div class="review-avatar">👩‍⚕️</div>
+                <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
                 <p class="review-text">"The ambiance was warm and welcoming, staff polite and attentive. Every dish was delicious, fresh, and beautifully presented."</p>
                 <p class="review-author">— Dr. Riya Champaneriya</p>
             </div>
             <div class="review-card">
-                <div class="review-stars">★★★★☆</div>
+                <div class="review-avatar">👨‍💼</div>
+                <div class="review-stars" aria-label="4 out of 5 stars">★★★★☆</div>
                 <p class="review-text">"Delicious food, punjabi lovers must visit! They have Gujarati food too. Test was good and authentic."</p>
                 <p class="review-author">— Sagar Kathiriya</p>
             </div>
             <div class="review-card">
-                <div class="review-stars">★★★★★</div>
+                <div class="review-avatar">👨‍👩‍👧‍ staff polite and attentive. Every dish was delicious, fresh, and beautifully presented."</p>
+                <p class="review-author">— Dr. Riya Champaneriya</p>
+            </div>
+            <div class="review-card">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%23E67E22'/%3E%3C/svg%3E" alt="Sagar Kathiriya" class="review-image" loading="lazy">
+                <div class="review-stars" aria-label="4 out of 5 stars">★★★★☆</div>
+                <p class="review-text">"Delicious food, punjabi lovers must visit! They have Gujarati food too. Test was good and authentic."</p>
+                <p class="review-author">— Sagar Kathiriya</p>
+            </div>
+            <div class="review-card">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%232C1810'/%3E%3C/svg%3E" alt="Family Customer" class="review-image" loading👦</div>
+                <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
                 <p class="review-text">"Organized an amazing night for my family of 30 people. Perfect venue, excellent food, and great service!"</p>
                 <p class="review-author">— Family Customer</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="container" id="faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-container">
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span>What are your operating hours?</span>
+                    <span class="faq-toggle">▼</span>
+                </button>
+                <div class="faq-answer">
+                    <p>We are open daily from 11:00 AM to 10:30 PM. We serve lunch, dinner, and special events throughout the day.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span>How far in advance shoul="lazy">
+                <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
+                <p class="review-text">"Organized an amazing night for my family of 30 people. Perfect venue, excellent food, and great service!"</p>
+                <p class="review-author">— Family Customer</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Map -->
+    <section class="container" id="contact" aria-labelledby="contact-title">
+        <h2 id="contact-title">Find Us</h2>
+        <div class="contact-info">
+            <div class="contact-item">
+                <div class="icon" aria-hidden="true">📍</div>
+                <h3>Location</h3>
+                <p>1st Floor, Jyoti Park Society<br>
+                Surat to Kamrej Road, Kamrej<br>
+                Surat, Gujarat 394185, India</p>
+            </div>
+            <div class="contact-item">
+                <div class="icon" aria-hidden="true">📞</div>
+                <h3>Phone</h3>
+                <p><a href="tel:+919925899995" aria-label="Call restaurant at 099258 99995">d I book?</span>
+                    <span class="faq-toggle">▼</span>
+                </button>
+                <div class="faq-answer">
+                    <p>For regular table reservations, 24 hours notice is appreciated. For banquet events, we recommend booking at least 2-4 weeks in advance to ensure availability and proper arrangements.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span>Do you offer vegetarian options?</span>
+                    <span class="faq-toggle">▼</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Yes! We offer a wide range of vegetarian dishes including paneer tikka, daal fry, vegetable curries, and many more. We can customize menus for dietary preferences.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span>Do you provide home delivery?</span>
+                    <span class="faq-toggle">▼</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Yes, we offer no-contact home delivery. You can place orders via phone or WhatsApp for quick delivery to your location.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span>What payment methods do you accept?</span>
+                    <span class="faq-toggle">▼</span>
+                </button>
+                <div class="faq-answer">
+                    <p>We accept cash, card payments, and digital wallets (Google Pay, PhonePe, etc.) for all transactions.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span>Can I customize my banquet menu?</span>
+                    <span class="faq-toggle">▼</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Absolutely! We offer fully customizable menus for banquets. Please contact us to discuss your preferences, dietary requirements, and budget.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -803,7 +1925,28 @@
         <h2>Find Us</h2>
         <div class="contact-info">
             <div class="contact-item">
-                <div class="icon">📍</div>
+                <div class="icon099258 99995</a></p>
+            </div>
+            <div class="contact-item">
+                <div class="icon" aria-hidden="true">🕐</div>
+                <h3>Hours</h3>
+                <p>Monday - Sunday<br>11:00 AM - 10:30 PM</p>
+            </div>
+        </div>
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3721.3891159932586!2d72.9484764!3d21.2649959!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04419818a1a11%3A0x29df3808fbf7896f!2sHarikrushna%20Restaurant%20%26%20Banquet!5e0!3m2!1sen!2sin!4v1234567890" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="Harikrushna Restaurant location on Google Maps"
+                    onerror="showMapError()"></iframe>
+        </div>
+    </section>
+
+    <!-- Booking Form -->
+    <section class="container" id="booking" aria-labelledby="booking-title">
+        <h2 id="booking-title">Reserve Your Table</h2>
+        <div class="booking-form">">📍</div>
                 <h3>Location</h3>
                 <p>1st Floor, Jyoti Park Society<br>
                 Surat to Kamrej Road, Kamrej<br>
@@ -821,7 +1964,61 @@
             </div>
         </div>
         <div class="map-container">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3721.3891159932586!2d72.9484764!3d21.2649959!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04419818a1a11%3A0x29df3808fbf7896f!2sHarikrushna%20Restaurant%20%26%20Banquet!5e0!3m2!1sen!2sin!4v1234567890" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div class="map-error" id="mapError">
+                ⚠️ Map failed to load. Please contact us directly at 099258 99995
+            </div>
+            <iframe 
+                id="gmap" 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3721.3891
+            <div id="message" role="alert" aria-live="polite" aria-atomic="true"></div>
+            <form id="bookingForm" novalidate>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Your Name <span aria-label="required">*</span></label>
+                        <input type="text" id="name" name="name" required minlength="2" placeholder="Enter your name" aria-required="true">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email <span aria-label="required">*</span></label>
+                        <input type="email" id="email" name="email" required placeholder="your@email.com" aria-required="true">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="phone">Phone <span aria-label="required">*</span></label>
+                        <input type="tel" id="phone" name="phone" required placeholder="099258 99995" aria-required="true">
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Date <span aria-label="required">*</span></label>
+                        <input type="date" id="date" name="date" required aria-required="true" title="Select a date for your reservation">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="time">Time <span aria-label="required">*</span></label>
+                        <input type="time" id="time" name="time" required aria-required="true" title="Select a time for your reservation">
+                    </div>
+                    <div class="form-group">
+                        <label for="guests">Number of Guests <span aria-label="required">*</span></label>
+                        <select id="guests" name="guests" required aria-required="true">
+                            <option value="">Select</option>
+                            <option value="1">1 Guest</option>
+                            <option value="2">2 Guests</option>
+                            <option value="3">3 Guests</option>
+                            <option value="4">4 Guests</option>
+                            <option value="5">5 Guests</option>
+                            <option value="6">6 Guests</option>
+                            <option value="7+">7+ Guests</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="requests">Special Requests159932586!2d72.9484764!3d21.2649959!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04419818a1a11%3A0x29df3808fbf7896f!2sHarikrushna%20Restaurant%20%26%20Banquet!5e0!3m2!1sen!2sin!4v1234567890" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Harikrushna Restaurant Location on Google Maps"
+                aria-label="Interactive map showing Harikrushna Restaurant location"
+            ></iframe>
         </div>
     </section>
 
@@ -830,35 +2027,80 @@
         <h2>Reserve Your Table</h2>
         <div class="booking-form">
             <div id="message"></div>
+            <div class="spinner" id="spinner"></div>
             <form id="bookingForm">
-                <div class="form-row">
+                <div class</label>
+                    <textarea id="requests" name="requests" rows="3" placeholder="Any special requests or dietary requirements?" aria-describedby="requests-help"></textarea>
+                    <small id="requests-help">Optional: Let us know about dietary restrictions or special occasions</small>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;" id="submitBtn">Reserve Table</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Social Links & Newsletter -->
+    <section class="container" aria-labelledby="social-title">
+        <h2 id="social-title">Follow Us</h2>
+        <p style="text-align: center; margin-bottom: 1.5rem;">Stay updated with our latest offers and menu items</p>
+        <div class="social-links">
+            <a href="https://facebook.com" aria-label="Follow us on Facebook" target="_blank" rel="noopener noreferrer">f</a>
+            <a href="https://instagram.com" aria-label="Follow us on Instagram" target="_blank" rel="noopener noreferrer">📷</a>
+            <a href="https://wa.me/919925899995" aria-label="Message us on WhatsApp" target="_blank" rel="noopener noreferrer">="form-row">
                     <div class="form-group">
-                        <label for="name">Your Name *</label>
-                        <input type="text" id="name" name="name" required minlength="2" placeholder="Enter your name">
+                        <label for="name">Your Name <span aria-label="required">*</span></label>
+                        <input type="text" id="name" name="name" required minlength="2" placeholder="Enter your name" aria-describedby="nameHelp">
                     </div>
                     <div class="form-group">
-                        <label for="email">Email *</label>
-                        <input type="email" id="email" name="email" required placeholder="your@email.com">
+                        <label for="email">Email <span aria-label="required">*</span></label>
+                        <input type="email" id="email" name="email" required placeholder="your@email.com" aria-describedby="emailHelp">
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group">
-                        <label for="phone">Phone *</label>
-                        <input type="tel" id="phone" name="phone" required placeholder="099258 99995">
+                        <label for="phone">Phone <span aria-label="required">*</span></label>
+                        <input type="tel" id="phone" name="phone" required placeholder="099258 99995" aria-describedby="phoneHelp">
                     </div>
                     <div class="form-group">
-                        <label for="date">Date *</label>
-                        <input type="date" id="date" name="date" required>
+                        <label for="date">Date <span aria-label="required">*</span></label>
+                        <input type="date" id="date" name="date" required aria-describedby="dateHelp">
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group">
-                        <label for="time">Time *</label>
-                        <input type="time" id="time" name="time" required>
+                        <label for="time">Time <span aria-label="required">*</span></label>
+                        <input type="time💬</a>
+            <a href="https://youtube.com" aria-label="Subscribe on YouTube" target="_blank" rel="noopener noreferrer">▶️</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer role="contentinfo">
+        <p>&copy; 2024 Harikrushna Restaurant & Banquet. All rights reserved.</p>
+        <p>📍 Surat, Gujarat | 📞 <a href="tel:+919925899995">099258 99995</a></p>
+        <p>Family Friendly • LGBTQ+ Friendly • Women-Owned</p>
+        <p style="margin-top: 1rem; font-size: 0.9rem;">
+            <a href="#" aria-label="Privacy Policy">Privacy Policy</a> | 
+            <a href="#" aria-label="Terms of Service">Terms of Service</a> | 
+            <a href="#contact" aria-label="Contact us">Contact</a>
+        </p>
+    </footer>
+
+    <script>
+        // ============= Dark Mode Toggle =============
+        const themeToggle = document.getElementById('themeToggle');
+        const html = document.documentElement;
+        
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        html.style.colorScheme = currentTheme;
+        document.body.classList.toggle('dark-mode', currentTheme === 'dark');
+        updateThemeToggle();
+
+        themeToggle.addEventListener('click', () => {
+            const isDark" id="time" name="time" required aria-describedby="timeHelp">
                     </div>
                     <div class="form-group">
-                        <label for="guests">Number of Guests *</label>
-                        <select id="guests" name="guests" required>
+                        <label for="guests">Number of Guests <span aria-label="required">*</span></label>
+                        <select id="guests" name="guests" required aria-describedby="guestsHelp">
                             <option value="">Select</option>
                             <option value="1">1 Guest</option>
                             <option value="2">2 Guests</option>
@@ -882,16 +2124,116 @@
     <!-- Footer -->
     <footer>
         <p>&copy; 2024 Harikrushna Restaurant & Banquet. All rights reserved.</p>
-        <p>📍 Surat, Gujarat | 📞 099258 99995</p>
+        <p> = document.body.classList.toggle('dark-mode');
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            html.style.colorScheme = isDark ? 'dark' : 'light';
+            updateThemeToggle();
+        });
+
+        function updateThemeToggle() {
+            themeToggle.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
+        }
+
+        // ============= Mobile Menu =============
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const nav = document.getElementById('nav');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            nav.classList.toggle('active');
+            mobileMenuBtn.setAttribute('aria-expanded', nav.classList.contains('active'));
+        });
+
+        document.querySelectorAll('#nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('active');
+                mobileMenuBtn.setAttribute('aria-expanded', 'false');
+            });
+        });
+
+        // ============= Map Error Handling =============
+        function showMapError() {
+            const mapContainer = document.querySelector('.map-container');
+            mapContainer.innerHTML = '<div class="map-error">Unable to load map. Please call us at 099258 99995 for directions.</div>';
+        }
+
+        // ============= Booking Form Validation & Submission =============
+        const bookingForm = document.getElementById('bookingForm');
+        const messageDiv = document.getElementById('message');📍 Surat, Gujarat | 📞 099258 99995</p>
         <p>Family Friendly • LGBTQ+ Friendly • Women-Owned</p>
+        <div class="social-links">
+            <a href="https://www.facebook.com/harikrushna" aria-label="Facebook" title="Follow us on Facebook">f</a>
+            <a href="https://www.instagram.com/harikrushna" aria-label="Instagram" title="Follow us on Instagram">📷</a>
+            <a href="https://wa.me/919925899995" aria-label="WhatsApp" title="Contact us on WhatsApp">💬</a>
+        </div>
     </footer>
 
     <script>
-        // Dark Mode Toggle
+        // ============ ERROR HANDLING & UTILITIES ============
+        
+        // Safe WhatsApp link handler
+        function safeWhatsAppLink(phone, message) {
+            try {
+                const encodedMsg = encodeURIComponent(message);
+                const url = `https://wa.me/${phone}?text=${encodedMsg}`;
+                
+                // Validate URL
+                if (!url.includes('wa.me')) {
+                    throw new Error('Invalid WhatsApp URL');
+                }
+                
+                window.open(url, '_blank', 'noopener,noreferrer');
+                return true;
+            } catch (error) {
+                console.error('WhatsApp error:', error);
+                showMessage('Faile
+        const submitBtn = document.getElementById('submitBtn');
+
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById('date').min = today;
+
+        bookingForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            messageDiv.innerHTML = '';
+
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const date = document.getElementById('date').value;
+            const time = document.getElementById('time').value;
+            const guests = document.getElementById('guests').value;
+            const requests = document.getElementById('requests').value.trim();
+
+            const errors = [];
+
+            if (name.length < 2) errors.push('Name must be at least 2 characters');
+            if (email.length < 5 || !email.includes('@')) errors.push('Please enter a valid email');
+            if (phone.length < 10) errors.push('Please enter a valid phone number');
+            if (!date) errors.push('Please select a date');
+            if (!time) errors.push('Please select a time');
+            if (!guests) errors.push('Please select number of guests');
+
+            if (errors.length > 0) {
+                messageDiv.innerHTML = `<div class="message error">⚠️ ${errors.join('<br>')}</div>`;
+                return;
+            }
+
+            // Show loading state
+            submitBtn.disabled = true;
+            submitBtn.innerHTMLd to open WhatsApp. Please call us directly at 099258 99995', 'error');
+                return false;
+            }
+        }
+
+        // Map error handler
+        document.getElementById('gmap').addEventListener('error', () => {
+            document.getElementById('mapError').style.display = 'block';
+            document.getElementById('gmap').style.display = 'none';
+        });
+
+        // ============ DARK MODE ============
         const themeToggle = document.getElementById('themeToggle');
         const html = document.documentElement;
         
-        // Check for saved theme preference
         const currentTheme = localStorage.getItem('theme') || 'light';
         html.style.colorScheme = currentTheme;
         document.body.classList.toggle('dark-mode', currentTheme === 'dark');
@@ -908,65 +2250,217 @@
             themeToggle.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
         }
 
-        // Mobile Menu
+        // ============ MOBILE MENU ============
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const nav = document.getElementById('nav');
         
-        mobileMenuBtn.addEventListener('click', () => {
+        mobileMenuBtn.addEventListener('click', = '<span class="spinner"></span>Sending...';
+
+            // Send to WhatsApp
+            const message = `Hi Harikrushna,\n\nI'd like to make a reservation:\n\n*Name:* ${name}\n*Email:* ${email}\n*Phone:* ${phone}\n*Date:* ${date}\n*Time:* ${time}\n*Guests:* ${guests}\n*Special Requests:* ${requests || 'None'}`;
+            const whatsappUrl = `https://wa.me/919925899995?text=${encodeURIComponent(message)}`;
+            
+            try {
+                window.open(whatsappUrl, '_blank');
+                
+                // Show success message
+                messageDiv.innerHTML = `<div class="message success">✓ Booking request sent! We'll confirm via WhatsApp shortly.</div>`;
+                bookingForm.reset();
+            } catch (error) {
+                messageDiv.innerHTML = `<div class="message error">Error opening WhatsApp. Please try again or call us at 099258 99995</div>`;
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = 'Reserve Table';
+            }
+        });
+
+        // ============= WhatsApp Order Function =============
+        function orderOnWhatsApp(item) {
+            const message = `Hi, I'd like to order: ${item}`;
+            const whatsappUrl () => {
             nav.classList.toggle('active');
         });
 
-        // Close mobile menu when a link is clicked
         document.querySelectorAll('#nav a').forEach(link => {
             link.addEventListener('click', () => {
                 nav.classList.remove('active');
             });
         });
 
-        // Booking Form Validation & Submission
+        // ============ MOBILE CALL BUTTON ============
+        const mobileCallBtn = document.getElementById('mobileCallBtn');
+        mobileCallBtn.addEventListener('click', () => {
+            window.location.href = 'tel:+919925899995';
+        });
+
+        // ============ FAQ ACCORDION ============
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const faqItem = button.parentElement;
+                const isActive = faqItem.classList.contains('active');
+                
+                // Close all other items
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                    item.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+                });
+                
+                // Toggle current item
+                if (!isActive) {
+                    faqItem.classList.add('active');
+                    button.setAttribute('aria-expanded', 'true');
+                }
+            });
+        });
+
+        // ============ BOOKING FORM ============
         const bookingForm = document.getElementById('bookingForm');
         const messageDiv = document.getElementById('message');
+        const spinner = document.getElementById('spinner'); = `https://wa.me/919925899995?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
+        }
 
-        // Set minimum date to today
+        // ============= Banquet Inquiry Function =============
+        function inquirePackage(packageName) {
+            const message = `Hi, I'm interested in the ${packageName} Banquet Package. Can you provide more details?`;
+            const whatsappUrl = `https://wa.me/919925899995?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
+        }
+
+        // ============= FAQ Toggle =============
+        function toggleFAQ(element) {
+            const answer = element.nextElementSibling;
+            const toggle = element.querySelector('.faq-toggle');
+            
+            answer.classList.toggle('active');
+            toggle.classList.toggle('active');
+            
+            // Close other FAQs
+            document.querySelectorAll('.faq-item').forEach(item => {
+                if (item !== element.parentElement) {
+                    item.querySelector('.faq-answer').classList.remove('active');
+                    item.querySelector('.faq-toggle').classList.remove('active');
+                }
+            });
+        }
+
+        // ============= Smooth scroll for older browsers =============
+        if (!CSS.supports('scroll-behavior', 'smooth')) {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+
         const today = new Date().toISOString().split('T')[0];
         document.getElementById('date').min = today;
 
+        function showMessage(text, type) {
+            messageDiv.textContent = text;
+            messageDiv.className = `message show ${type}`;
+            setTimeout(() => {
+                messageDiv.classList.remove('show');
+            }, 5000);
+        }
+
         bookingForm.addEventListener('submit', function(e) {
             e.preventDefault();
-            messageDiv.innerHTML = '';
-
+            
             const name = document.getElementById('name').value.trim();
             const email = document.getElementById('email').value.trim();
             const phone = document.getElementById('phone').value.trim();
             const date = document.getElementById('date').value;
             const time = document.getElementById('time').value;
             const guests = document.getElementById('guests').value;
+            const requests = document.getElementById('requests').value.trim();
 
             const errors = [];
 
             if (name.length < 2) errors.push('Name must be at least 2 characters');
-            if (email.length < 5) errors.push('Please enter a valid email');
+            if (!email.includes('@')) errors.push('Please enter a valid email');
             if (phone.length < 10) errors.push('Please enter a valid phone number');
             if (!date) errors.push('Please select a date');
             if (!time) errors.push('Please select a time');
             if (!guests) errors.push('Please select number of guests');
 
             if (errors.length > 0) {
-                messageDiv.innerHTML = `<div class="message error">${errors.join('<br>')}</div>`;
+                showMessage(errors.join('\n'), 'error');
                 return;
             }
 
-            // Send to WhatsApp
-            const message = `Hi Harikrushna,\n\nI'd like to make a reservation:\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\nDate: ${date}\nTime: ${time}\nGuests: ${guests}`;
-            const whatsappUrl = `https://wa.me/919925899995?text=${encodeURIComponent(message)}`;
-            window.open(whatsappUrl, '_blank');
+            // Show loading
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            });
+        }
 
-            // Show success message
-            messageDiv.innerHTML = `<div class="message success">✓ Booking request sent! We'll confirm via WhatsApp shortly.</div>`;
-            bookingForm.reset();
+        // ============= Lazy loading for images =============
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src || img.src;
+                        observer.unobserve(img);
+                    }
+                });
+            });
+
+            document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+                imageObserver.observe(img);
+            });
+        }
+
+        // ============= Accessibility: Keyboard Navigation =============
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    question.click();
+                }
+            });
+            question.setAttribute('tabindex', '0');
+        });
+    </script>
+</body>
+</html>
+```
+
+---
+
+## ✨ **All Issues Fixed:**
+
+| Issue | Fix |
+|-------|-- spinner
+            spinner.classList.add('show');
+
+            // Simulate processing (remove after 1 second)
+            setTimeout(() => {
+                spinner.classList.remove('show');
+
+                // Send to WhatsApp
+                try {
+                    const message = `Hi Harikrushna,\n\n*Booking Request*\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\nDate: ${date}\nTime: ${time}\nGuests: ${guests}${requests ? '\nRequests: ' + requests : ''}`;
+                    
+                    if (safeWhatsAppLink('919925899995', message)) {
+                        showMessage('✓ Booking request sent! We\'ll confirm via WhatsApp shortly.', 'success');
+                        bookingForm.reset();
+                    }
+                } catch (error) {
+                    console.error('Booking error:', error);
+                    showMessage('Error processing booking. Please call us at 099258 99995', 'error');
+                }
+            }, 1000);
         });
 
-        // Smooth scroll behavior for older browsers
+        // ============ CONTACT US HELPER ============
+        function contactUs(packageType) {
+            const message = `Hi Harikrushna, I'm interested in your ${packageType} banquet package. Can you provide more details?`;
+            safeWhatsAppLink('919925899995', message);
+        }
+
+        // ============ ACCESSIBILITY - SMOOTH SCROLL FALLBACK ============
         if (!CSS.supports('scroll-behavior', 'smooth')) {
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
@@ -978,6 +2472,25 @@
                 });
             });
         }
+
+        // ============ LAZY LOADING IMAGES (when you add real images) ============
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src;
+                        img.classList.remove('lazy');
+                        observer.unobserve(img);
+                    }
+                });
+            });
+
+            document.querySelectorAll('img.lazy').forEach(img => imageObserver.observe(img));
+        }
+
+        // ============ CONSOLE LOG STARTUP ============
+        console.log('🍽️ Harikrushna Restaurant Website Loaded Successfully');
     </script>
 </body>
 </html>
